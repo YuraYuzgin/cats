@@ -1,0 +1,49 @@
+/*==========  Desktop First  ========== */
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  /* */
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .cat-card {
+    width: 30%;
+  }
+
+  .cat-card-popup {
+    height: min-content;
+  }
+
+  .cat-card-popup-info {
+    flex-direction: column;
+  }
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .cat-card {
+    width: 41%;
+    margin: 2%;
+  }
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .cat-card {
+    width: 80%;
+    margin: 3% 10%;
+  }
+
+  .age-rate-favorite {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .create-edit-modal-form {
+    padding: 25px 20px;
+    max-width: 300px;
+    font-size: 16px;
+  }
+
+  .form-header h2 {
+    font-size: 20px;
+  }
+}

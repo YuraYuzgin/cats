@@ -1,0 +1,300 @@
+body {
+    background-color: rgb(119, 119, 119);
+}
+
+header {
+    height: 100px;
+    background-color:#010101;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.header-left img {
+    height: 100px;
+}
+
+.header-right {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#main {
+    min-height: calc(100vh - 270px)
+}
+
+.all-cats {
+    align-items: center;
+    margin: 0 auto;
+}
+
+.add-cat {
+    display: flex;
+    height: 41px;
+    width: 41px;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 50%;
+    background-color: rgb(240, 240, 240);
+    align-items: center;
+    justify-content: center;
+}
+
+.add-cat:hover {
+    cursor: pointer;
+    background-color: rgb(227, 230, 236);
+}
+
+.plus {
+    font-size: 40px;
+    margin-bottom: 7px;
+}
+
+.cat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgb(206, 205, 205);
+    border: 2px solid rgb(41, 41, 41);
+    border-radius: 5px;
+    align-self: stretch;
+    min-height: 320px;
+    width: 23%;
+    min-width: 200px;
+    margin: 1%;
+}
+
+.cat-card-img {
+    border: 1px solid rgb(41, 41, 41);
+    border-radius: 5px;
+    width: 95%;
+    height: 70%;
+    background-size: cover;
+}
+
+.heart {
+    position: relative;
+    left: 40%;
+    margin-top: 3px;
+    scale: 0.8;
+}
+
+.cat-card > h3 {
+    color: rgb(49, 49, 49);
+    font-size: 24px;
+    margin: 10px auto;
+}
+
+.cat-card-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    background-color:rgb(240, 240, 240);
+    border-radius: 10px;
+    padding: 4px 10px;
+    margin: 3px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color:rgb(227, 230, 236);
+}
+
+footer {
+    height: 120px;
+    width: 100%;
+    border-top: 1px solid #181818;
+    background-color:rgb(99, 99, 99);
+    margin-top: 30px;
+}
+
+.modal-cat-card-popup {
+    position: fixed;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 7;
+}
+
+.cat-card-popup-wrapper {
+    position: relative;
+    width: 80%;
+    height: 90%;
+}
+
+.cat-card-popup {
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: rgb(206, 205, 205);
+    border: 1px solid rgb(41, 41, 41);
+    border-radius: 10px;
+    width: 100%;
+    height: min-content;
+}
+
+.cat-card-popup-img {
+    position: relative;
+    display: flex;
+    width: 90%;
+    height: 90%;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cat-card-popup-img img {
+    margin: 0 auto;
+    width: max-content;
+    max-width: 80%;
+    height: max-content;
+    max-width: 80%;
+    border: 1px solid rgb(41, 41, 41);
+    margin-bottom: 5px;
+}
+
+.cat-card-popup-name-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cat-card-popup-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.age-rate-favorite {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cat-card-popup-info p {
+    margin: 5px 15px;
+    font-size: 18px;
+    max-width: 90%;
+}
+
+.shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgb(22, 22, 22);
+    opacity: 0.5;
+    display: flex;
+}
+
+.create-edit-modal-form-wrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    display: flex;
+}
+
+.modal-form-add,  .modal-form-edit {
+    display: none;
+}
+
+.modal-form-add.active {
+    display: flex;
+}
+
+.modal-form-edit.active {
+    display: flex;
+}
+
+.modal-form-edit.active h2 {
+    width: 80%;
+}
+
+.create-edit-modal-form {
+    display: flex;
+    flex-direction: column;
+    background-color:rgb(230, 223, 215);
+    width: 370px;
+    height: min-content;
+    padding: 35px 30px;
+    border-radius: 15px;
+    z-index: 15;
+}
+
+.form-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    padding-bottom: 15px;
+}
+
+.form-header h2 {
+    font-size: 24px;
+}
+
+.closeModal {
+    height: 30px;
+    width: 30px;
+    border: 1px solid rgb(49, 49, 49);
+    border-radius: 50%;
+    background-color: rgb(240, 240, 240);
+    color: rgb(49, 49, 49);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: ultra-expanded;
+}
+
+.closeModal-Card-Popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.closeModal:hover {
+    cursor: pointer;
+    background-color: rgb(227, 230, 236);
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+}
+
+.input-favorite {
+    flex-direction: row;
+}
+
+#label-favorite {
+    padding-right: 10px;
+}
+
+.btn-add-edit-cat {
+    margin-top: 10px;
+}
+
+.close:hover {
+    cursor: pointer;
+}

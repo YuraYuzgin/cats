@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/adaptive.css">
+
+    <script src="./js/bootstrap.bundle.min.js" defer></script>
+    <script src="./js/api.js" defer></script>
+    <script src="./js/components/card.js" defer></script>
+    <script src="./js/components/catCardPopup.js" defer></script>
+    <script src="./js/locStorage.js"></script>
+    <script src="./js/index.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-6 header-left">
+                    <a href="#"><img src="./images/1614768557_151-p-koshki-na-chernom-fone-186.jpg" alt=""></a>
+                </div>
+                <div class="col-6 header-right">
+                    <div class="add-cat">
+                        <div class="plus">
+                            +
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="main">
+        <div class="container">
+            <div class="row d-flex align-items-center text-center all-cats">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        
+    </footer>
+
+    <div class="modal-form-add">
+        <div class="shadow"></div>
+        <div class="create-edit-modal-form-wrapper">
+            <div class="create-edit-modal-form">
+                <div class="form-header">
+                    <h2>Добавить кота</h2>
+                    <div class="closeModal">X</div>
+                </div>
+                <form name="addCat" action="">
+                    <div class="form-input">
+                        <label for="name">Имя</label>
+                        <input id="name" name="name" type="text" placeholder="Имя" required>
+                    </div>
+                    <div class="form-input">
+                        <label for="image">Изображение</label>
+                        <input id="image" name="image" type="url" placeholder="Ссылка на изображение">
+                    </div>
+                    <div class="form-input">
+                        <label for="age">Возраст</label>
+                        <input id="age" name="age" type="number" placeholder="4" min="0" max="99">
+                    </div>
+                    <div class="form-input">
+                        <label for="rate">Рейтинг</label>
+                        <input id="rate" name="rate" type="number" placeholder="5" min="0" max="10">
+                    </div>
+                    <div class= "form-input input-favorite">
+                        <label id="label-favorite" for="favorite">Любимчик</label>
+                        <input id="favorite" name="favorite" type="checkbox">
+                    </div>
+                    <div class="form-input">
+                        <label for="description">Описание</label>
+                        <textarea id="description" name="description" type="text" placeholder="Напишите что-нибудь о питомце"></textarea>
+                    </div>
+                    <button class="btn btn-add-edit-cat" type="submit">Добавить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-form-edit">
+        <div class="shadow"></div>
+        <div class="create-edit-modal-form-wrapper">
+            <div class="create-edit-modal-form">
+                <div class="form-header">
+                    <h2>Изменить информацию о коте</h2>
+                    <div class="closeModal">X</div>
+                </div>
+                <form id ="edit-cat" name="editCat" action="">
+                    <div class="form-input">
+                        <label for="name">Имя</label>
+                        <input id="name" name="name" type="text" placeholder="Имя" required>
+                    </div>
+                    <div class="form-input">
+                        <label for="image">Изображение</label>
+                        <input id="image" name="image" type="url" placeholder="Ссылка на изображение">
+                    </div>
+                    <div class="form-input">
+                        <label for="age">Возраст</label>
+                        <input id="age" name="age" type="number" placeholder="4" min="0" max="99">
+                    </div>
+                    <div class="form-input">
+                        <label for="rate">Рейтинг</label>
+                        <input id="rate" name="rate" type="number" placeholder="5" min="0" max="10">
+                    </div>
+                    <div class= "form-input input-favorite">
+                        <label id="label-favorite" for="favorite">Любимчик</label>
+                        <input id="favorite" name="favorite" type="checkbox">
+                    </div>
+                    <div class="form-input">
+                        <label for="description">Описание</label>
+                        <textarea id="description" name="description" type="text" placeholder="Напишите что-нибудь о питомце"></textarea>
+                    </div>
+                    <button class="btn btn-add-edit-cat" type="submit">Изменить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
