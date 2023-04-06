@@ -13,16 +13,16 @@ const getCatFromLocStorage = (id) => {
 // синхронная перезапись основной секции с карточками
 const refreshCatsAndContentSync = () => {
     mainSectionContent.innerHTML = '';
-
     const cards = getCatsFromLocStorage().reduce((acc, el) => (acc += generateCard(el)), '');
     mainSectionContent.insertAdjacentHTML('afterbegin', cards);
 }
 
 // добавляем кота в локальное хранилище (полностью перезаписываем 'cats')
 const addCatInLocalStorage = (cat) => {
+    const catsObjSort = [...getCatsFromLocStorage(), cat].sort((x, y) => x.id - y.id);
     locStorage.setItem(
         'cats',
-        JSON.stringify([...getCatsFromLocStorage(), cat])
+        JSON.stringify([...catsObjSort])
     );
 }
 

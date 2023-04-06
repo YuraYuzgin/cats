@@ -41,18 +41,7 @@ document.querySelector('#main .container .row')
                     document.querySelector('.modal-form-edit').classList.add('active');
 
                     // Сохранение новых данных
-                    document.forms.editCat.addEventListener('submit', (event) => {
-                        event.preventDefault();
-                    
-                        const body = getFormData();
-                        api.updateCat({...body, id: cat.id}).then(() => {
-                            deleteCatFromLocalStorage(cat.id);
-                            addCatInLocalStorage({...body, id: cat.id});
-                            document.querySelector('.modal-form-edit').classList.remove('active');
-                            refreshCatsAndContentSync();
-
-                        });
-                    });
+                    newDataSave(cat);
 
                     break;
 
@@ -105,18 +94,34 @@ document.querySelectorAll('.closeModal').forEach((el) => {
     });
 });
 
-// Добавление кота
+// Событие добавления кота
 document.forms.addCat.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const body = getFormData();
     api.addCat({...body, id: getNewIdOfCatSync()}).then(() => {
-        addCatInLocalStorage({...body, id: getNewIdOfCatSync()});
+        addCatInLocalStorage({id: getNewIdOfCatSync(), ...body});
         document.querySelector('.modal-form-add').classList.remove('active');
         document.forms.addCat.reset();
         refreshCatsAndContentSync();
     });
 });
+
+// Событие сохрания новых данных после изменения (update)
+const newDataSave = (cat) => {
+    document.forms.editCat.addEventListener('submit', (event) => {
+        event.preventDefault();
+    
+        const body = getFormData();
+        api.updateCat({id: cat.id, ...body}).then(() => {
+            deleteCatFromLocalStorage(cat.id);
+            addCatInLocalStorage({id: cat.id, ...body});
+            document.querySelector('.modal-form-edit').classList.remove('active');
+            refreshCatsAndContentSync();
+        });
+    });
+}
+
 
 
 
