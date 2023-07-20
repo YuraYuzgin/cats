@@ -2,5 +2,5 @@
 
 Проект написан на чистом javascript.
 
-Ссылка на страницу:
+Ссылка на страницу:</br>
 https://yurayuzgin.github.io/cats/
